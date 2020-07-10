@@ -49,3 +49,11 @@ INSERT INTO [dbo].[People]
            ,'2009-jun-23'
            ,null)
 GO
+CREATE TABLE Users  (
+	Id INT PRIMARY KEY IDENTITY(1,1),
+	Username  NCHAR(30) NOT NULL,
+	[Password]  NCHAR(30) NOT NULL,
+	ProfilePicture  varbinary(max),
+	IsDeleted VARCHAR(10) CHECK (IsDeleted IN ('true','false')),
+	LastLoginTime DATE 	
+)
